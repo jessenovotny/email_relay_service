@@ -3,7 +3,7 @@ class GroupMailbox < ApplicationMailbox
     Rails.logger.info "Processing email in GroupMailbox: #{mail.subject}"
 
     # Find the group by email address
-    return unless group = EmailGroup.find_by(group_address: mail.to.first)
+    return unless group = ::Group.find_by(email_address: mail.to.first)
 
     group.email_blasts.create!(
       subject: mail.subject,
