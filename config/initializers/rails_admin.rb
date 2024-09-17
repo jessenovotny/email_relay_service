@@ -52,7 +52,7 @@ RailsAdmin.config do |config|
   config.model "Group" do
     list do
       field :name
-      field :email_address
+      field :email
       field :blast_count do
         label "Blast Count"
         pretty_value do
@@ -63,7 +63,7 @@ RailsAdmin.config do |config|
 
     edit do
       field :name
-      field :email_address
+      field :email
       field :users # Enable user selection
       # Do not include Emails here
     end

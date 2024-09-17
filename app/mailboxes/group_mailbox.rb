@@ -1,6 +1,6 @@
 class GroupMailbox < ApplicationMailbox
   def process
-    return unless group = ::Group.find_by(email_address: mail.to.first)
+    return unless group = ::Group.find_by(email: mail.to.first)
 
     group.email_blasts.create!(
       subject: mail.subject,
